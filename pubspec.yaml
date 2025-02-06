@@ -11,10 +11,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
+  get: ^4.6.6
+  provider: ^6.1.2
+  google_fonts: 4.0.4
+  firebase_core: ^2.3.0
+  cloud_firestore: ^4.0.0
+  firebase_auth: ^4.0.0
+  firebase_storage: ^11.0.0
   cupertino_icons: ^1.0.6
   web_socket_channel: ^3.0.2
+
 
 dev_dependencies:
   flutter_test:
@@ -25,21 +31,10 @@ flutter:
 
   uses-material-design: true
 
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/graphics/
+    - assets/graphics/app_icon/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
   # fonts:
   #   - family: Schyler
   #     fonts:
