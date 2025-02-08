@@ -7,7 +7,6 @@ import '../../infrastructure/theme/assets/app.assets.dart';
 import '../../infrastructure/theme/color/app.colors.dart';
 import '../shared/widgets/custom_bg.dart';
 import '../shared/widgets/custom_button.dart';
-
 import 'signIn.provider.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -40,7 +39,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Text(
+                    const Text(
                       "SweetCRM",
                       style: TextStyle(
                         fontSize: 32,
@@ -49,7 +48,6 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                     const SizedBox(height: 40),
-
                     TextField(
                       onChanged: (value) => provider.email = value,
                       style: const TextStyle(color: Colors.white),
@@ -65,7 +63,6 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-
                     TextField(
                       onChanged: (value) => provider.password = value,
                       obscureText: true,
@@ -82,25 +79,22 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                     const SizedBox(height: 40),
-
                     provider.isLoading
                         ? const CupertinoActivityIndicator()
                         : Align(
-                      alignment: Alignment.bottomCenter,
-
-                      child: CustomButton(
-                                                onTap: () async {
-                          await provider.signIn();
-                          Get.offAllNamed(Routes.HOME);
-                                                },
-                                                title: 'Sign In',
-                                                bgColor: Colors.white,
-                                                textColor: AppColors.light.primaryText,
-                                                width: MediaQuery.of(context).size.width * 0.85,
-                                              ),
-                        ),
+                            alignment: Alignment.bottomCenter,
+                            child: CustomButton(
+                              onTap: () async {
+                                await provider.signIn();
+                                Get.offAllNamed(Routes.HOME);
+                              },
+                              title: 'Sign In',
+                              bgColor: Colors.white,
+                              textColor: AppColors.light.primaryText,
+                              width: MediaQuery.of(context).size.width * 0.85,
+                            ),
+                          ),
                     const SizedBox(height: 20),
-
                     GestureDetector(
                       onTap: () {
                         Get.toNamed(Routes.SIGNUP);

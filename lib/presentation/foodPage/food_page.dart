@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../infrastructure/navigation/routes.dart';
 
 class FoodPage extends StatelessWidget {
   const FoodPage({super.key});
@@ -17,7 +21,7 @@ class FoodPage extends StatelessWidget {
             leading: IconButton(
               color: Colors.white,
               icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Get.offAllNamed(Routes.SPLASH),
             ),
             floating: true,
             snap: true,

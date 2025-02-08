@@ -6,6 +6,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../../config.dart';
 import '../../presentation/foodPage/food_page.dart';
 import '../../presentation/signin/signIn.screen.dart';
+import '../../presentation/signup/signUp.screen.dart';
 import '../../presentation/socket_try/home-page.dart';
 import '../../presentation/splash/splash.screen.dart';
 
@@ -19,36 +20,36 @@ class EnvironmentsBadge extends StatelessWidget {
     var env = ConfigEnvironments.getEnvironments()['env'];
     return env != Environments.PRODUCTION
         ? Banner(
-      location: BannerLocation.topStart,
-      message: env!,
-      color: env == Environments.QAS ? Colors.blue : Colors.purple,
-      child: child,
-    )
+            location: BannerLocation.topStart,
+            message: env!,
+            color: env == Environments.QAS ? Colors.blue : Colors.purple,
+            child: child,
+          )
         : SizedBox(child: child);
   }
 }
+
 class Nav {
   static List<GetPage> routes = [
     GetPage(
       name: Routes.HOME,
-      page: () => MyHomePage(),
+      page: () => const MyHomePage(),
     ),
     GetPage(
       name: Routes.SPLASH,
-      page: () => SplashScreen(),
+      page: () => const SplashScreen(),
     ),
     GetPage(
       name: Routes.FOODPAGE,
-      page: () => FoodPage(),
+      page: () => const FoodPage(),
     ),
     GetPage(
       name: Routes.SIGNIN,
-      page: () => SignInScreen(),
+      page: () => const SignInScreen(),
     ),
     GetPage(
       name: Routes.SIGNUP,
-      page: () => FoodPage(),
+      page: () => const SignUpScreen(),
     ),
-
   ];
 }

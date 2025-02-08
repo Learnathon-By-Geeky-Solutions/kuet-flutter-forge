@@ -10,8 +10,6 @@
 //   WidgetsFlutterBinding.ensureInitialized();
 //   // await DomainLayerDependencyInjectionContainer.init();
 //
-//   // MinRest.init("https://developer.quiztime.gamehubbd.com/api/v2.0");
-//
 //   runApp(Main(initialRoute));
 // }
 //
@@ -34,20 +32,18 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:flutterforge/presentation/signin/signIn.provider.dart';
+import 'package:flutterforge/presentation/signup/signUp.provider.dart';
 import 'package:flutterforge/presentation/splash/splashScreen.provider.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   var initialRoute = await Routes.initialRoute;
-
   runApp(MyApp(initialRoute: initialRoute));
 }
 
@@ -62,12 +58,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<SplashScreenProvider>(create: (_) => SplashScreenProvider(),),
         ChangeNotifierProvider<SignInScreenProvider>(create: (_) => SignInScreenProvider(),),
+        ChangeNotifierProvider<SignUpScreenProvider>(create: (_) => SignUpScreenProvider(),),
 
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          fontFamily: GoogleFonts.poppins().fontFamily,
+          fontFamily: GoogleFonts.notoSansCarian().fontFamily,
         ),
         initialRoute: initialRoute,
         getPages: Nav.routes,
